@@ -11,6 +11,7 @@ function App(longi, lati, props) {
   const [descr, setDescr] = useState("Loading...");
   const [main, setMain] = useState("Loading...");
   const [city, setCity] = useState("Loading...");
+  const [icon, setIcon] = useState("Loading...")
 
 
   //curent location weather info
@@ -32,6 +33,7 @@ function App(longi, lati, props) {
             setCity(res.data.name);
             setDescr(res.data.weather[0].description);
             setMain(res.data.weather[0].main);
+            setIcon(`http://openweathermap.org/img/wn/${res.data.weather[0].icon}@2x.png`)
 
             console.log(res.data);
           });
@@ -67,6 +69,7 @@ function App(longi, lati, props) {
           city={city}
           descr={descr}
           main={main}
+          icon={icon}
         ></Stat>
       </Card>
     </div>
