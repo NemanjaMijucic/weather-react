@@ -21,8 +21,6 @@ function App(longi, lati, props) {
         let longi = position.coords.longitude;
         let lati = position.coords.latitude;
 
-        console.log(longi, lati);
-
         axios
           .get(
             `https://api.openweathermap.org/data/2.5/weather?lat=${lati}&lon=${longi}&appid=2c4ae810fb0582e5bfd2d6d93d8e708d`
@@ -36,8 +34,11 @@ function App(longi, lati, props) {
             setIcon(`http://openweathermap.org/img/wn/${res.data.weather[0].icon}@2x.png`)
          
 
+           
             console.log(res.data);
-          });
+
+          })
+          
       });
     }
   }, [longi, lati]);
