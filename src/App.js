@@ -34,6 +34,7 @@ function App(longi, lati, props) {
             setDescr(res.data.weather[0].description);
             setMain(res.data.weather[0].main);
             setIcon(`http://openweathermap.org/img/wn/${res.data.weather[0].icon}@2x.png`)
+         
 
             console.log(res.data);
           });
@@ -54,6 +55,7 @@ function App(longi, lati, props) {
         setCity(res.data.name);
         setDescr(res.data.weather[0].description);
         setMain(res.data.weather[0].main);
+        setIcon(`http://openweathermap.org/img/wn/${res.data.weather[0].icon}@2x.png`);
       });
   };
 
